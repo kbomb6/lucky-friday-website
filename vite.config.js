@@ -8,7 +8,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 export default defineConfig({
   base: '/lucky-friday-website/',
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    emptyOutDir: true
   },
   plugins: [vue()],
   resolve: {
