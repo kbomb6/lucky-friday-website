@@ -1,15 +1,65 @@
 <script setup>
+import { ref } from 'vue'
+
+const formData = ref({
+  firstName: '',
+  lastName: '',
+  email: ''
+})
+
+const isLoading = ref(false)
+const isSuccess = ref(false)
+const errorMessage = ref('')
+
+const resetForm = ()=> {
+  isSuccess.value = false;
+  formData.value = { firstName: '', lastName: '', email: '' };
+}
+
+const joinWaitlist = async () => {
+  isLoading.value = true;
+  errorMessage.value = '';
+
+  try {
+    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        service_id: 'service_zwwdg6c',
+        template_id: 'template_jmw65r8',
+        user_id: '9F-ZdlgrgAfWad2lO',
+        template_params: {
+          to_email: 'bauman.kellyk@gmail.com',
+          name: formData.value.firstName + ' ' + formData.value.lastName,
+          email: formData.value.email,
+          date: new Date().toLocaleString()
+        }
+      })
+    });
+
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    
+    isSuccess.value = true;
+    
+  } catch (error) {
+    errorMessage.value = 'There was an error submitting your form. Please try again.';
+    console.error('Submission error:', error);
+  } finally {
+    isLoading.value = false;
+  }
+}
 </script>
 
 <template>
   <div>
-    <!-- Section 1: Top Content -->
     <div class="top-content">
-      <img 
-        src="@/assets/Logo.png" 
-        class="main-logo"
-        alt="Logo"
-      >
+
+      <img
+      src="/Users/work/lucky-friday-website/src/assets/Lucky Friday Bright Icon.png"
+      class="main-logo"
+      alt="logo">
       <div class="bg-wrapper">
         <img 
           src="@/assets/svgs/main-bg.svg" 
@@ -18,27 +68,39 @@
         >
       </div>
       <div class="main-text">
-        <p>Welcome to the most customizable budgeting app on the market today.</p>
-        <!-- <h1>Lucky Friday</h1> -->
+        <p>Welcome to Lucky Friday, the most customizable budgeting app on the market today.</p>
       </div>
-      <div class="waitlist-wrapper">
+      <div v-if="isSuccess" class="success-message">
+        <h3 class="success-heading">Spot Claimed! 🎉</h3>
+        <div class="success-content">
+          <p>You're now in line for early access to <strong>Lucky Friday</strong>.</p>
+          <p>We'll email <span class="highlight">{{ formData.email }}</span> when it's your turn to join.</p>
+        </div>
+        <button 
+          class="submit-button success-button"
+          @click="resetForm"
+        >
+          Got it!
+        </button>
+      </div>
+      <div v-else class="waitlist-wrapper">
         <h2 class="waitlist">Join The Waitlist</h2>
         <div class="form-wrapper">
-          <form>
+          <form @submit.prevent="joinWaitlist">
             <fieldset>
               <div class="names">
                 <div>
                   <label for="question1">First Name</label>
-                  <input required type="text" class="input" />
+                  <input v-model="formData.firstName" required type="text" class="input" />
                 </div>
                 <div>
                   <label for="question1">Last Name </label>
-                  <input required type="text" class="input" />
+                  <input v-model="formData.lastName" required type="text" class="input" />
                 </div>
               </div>
               <div>
                 <label for="email">Email</label>
-                <input required type="email" class="input">
+                <input v-model="formData.email" required type="email" class="input">
               </div>
             </fieldset>
             <div>
@@ -75,31 +137,6 @@
       </div>
     </div> -->
 
-    <!-- Section 2: App Showcase -->
-    <!-- <div class="section-three">
-      <h2 class="waitlist">Join the waitlist</h2>
-      <div class="form-wrapper">
-        <form>
-          <fieldset>
-            <div class="names">
-              <div>
-                <label for="question1">First </label>
-                <input type="text" class="input" />
-              </div>
-              <div>
-                <label for="question1">First </label>
-                <input type="text" class="input" />
-              </div>
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input type="email" class="input">
-            </div>
-          </fieldset>
-        </form>
-      </div>
-    </div> -->
-
   </div>
 </template>
 
@@ -108,16 +145,23 @@
 .top-content {
   height: 100vh;
   background: #004751;
-  /* color: #bbff16; */
   color: #48ffcd;
   overflow: hidden;
   position: relative;
+  padding: 0 2em;
 }
 
 .waitlist-wrapper {
   position: relative;
   z-index: 3;
   margin-top: 5em;
+
+  @media only screen 
+    and (max-width: 375px) 
+    and (max-height: 667px) {
+    margin-top: 2em;
+    padding-left: 1em;
+  }
 }
 
 .bg-wrapper {
@@ -150,11 +194,10 @@
 }
 
 .main-logo {
-  /* position: absolute;
-  top: 0;
-  right: 0; */
-  max-width: 300px;
-  z-index: 3;
+  margin-top: 2em;
+  max-width: 150px;
+  z-index: 5;
+  position: relative;
 }
 
 .section-two {
@@ -182,8 +225,6 @@
 .screenshot-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  /* width: 100vw;
-  max-width: 100%; */
   box-sizing: border-box;
   padding-bottom: 2em;
   gap: 1em;
@@ -286,5 +327,24 @@ label {
   color: #004751;
   font-weight: bold;
   letter-spacing: 0.5px;
+}
+
+.success-message {
+  position: relative;
+  z-index: 3;
+  color: #ffffff;
+  margin-top: 5em;
+}
+
+.success-message button {
+  width: auto;
+}
+
+.main-text p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.waitlist {
+  font-size: clamp(2rem, 6vw, 5rem);
 }
 </style>

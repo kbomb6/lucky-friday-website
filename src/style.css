@@ -60,18 +60,9 @@ button:focus-visible {
 
 #app {
   margin: 0 auto;
-  /* padding: 2rem; */
   text-align: center;
   width: 100%;
 }
-
-/* .input {
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 1em;
-  width: 100%;
-  box-sizing: border-box;
-} */
 
 .input {
   border-radius: 10px;
@@ -85,7 +76,6 @@ button:focus-visible {
   -webkit-appearance: none;
   appearance: none;
   outline: none;
-  /* border: 2px solid #bbff16; */
   border: 2px solid #48ffcd;
   border-radius: 4px;
   padding: 12px;
@@ -102,6 +92,18 @@ button:focus-visible {
 fieldset {
   border: none;
   text-align: left;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
 @media (prefers-color-scheme: light) {
