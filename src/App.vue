@@ -59,13 +59,6 @@ const joinWaitlist = async () => {
       src="/Users/work/lucky-friday-website/src/assets/Lucky Friday Bright Icon.png"
       class="main-logo"
       alt="logo">
-      <!-- <div class="bg-wrapper">
-        <img 
-          src="@/assets/svgs/main-bg.svg" 
-          class="svg-overlay"
-          alt="Decorative pattern"
-        >
-      </div> -->
       <div class="main-text">
         <p>Welcome to Lucky Friday, the most customizable budgeting app on the market today.</p>
       </div>
@@ -143,23 +136,24 @@ const joinWaitlist = async () => {
 
 .main-bg {
   background-image: url('/src/assets/bluebg.png');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .top-content {
-  min-height: 100dvh;
-  overflow: auto;
   color: #48ffcd;
   overflow: hidden;
   position: relative;
   padding: 0 2em;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  height: 100%;
+  overflow: auto;
 }
 
 .waitlist-wrapper {
   position: relative;
-  z-index: 3;
   margin-top: 5em;
 
   @media only screen 
@@ -168,17 +162,6 @@ background-repeat: no-repeat;
     margin-top: 2em;
     padding-left: 1em;
   }
-}
-
-.bg-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 110vw;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
 }
 
 .svg-overlay {
