@@ -143,7 +143,7 @@ const joinWaitlist = async () => {
 <style scoped>
 
 .top-content {
-  height: 100vh;
+  height: 100dvh;
   background: #004751;
   color: #48ffcd;
   overflow: hidden;
@@ -201,7 +201,7 @@ const joinWaitlist = async () => {
 }
 
 .section-two {
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   overflow: hidden;
   z-index: 2;
@@ -285,7 +285,7 @@ const joinWaitlist = async () => {
 }
 
 .section-three {
-  height: 100vh;
+  height: 100dvh;
   background: #1954b6;
 }
 
