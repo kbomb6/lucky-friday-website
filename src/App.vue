@@ -53,20 +53,19 @@ const joinWaitlist = async () => {
 </script>
 
 <template>
-  <div>
+  <div class="main-bg">
     <div class="top-content">
-
       <img
       src="/Users/work/lucky-friday-website/src/assets/Lucky Friday Bright Icon.png"
       class="main-logo"
       alt="logo">
-      <div class="bg-wrapper">
+      <!-- <div class="bg-wrapper">
         <img 
           src="@/assets/svgs/main-bg.svg" 
           class="svg-overlay"
           alt="Decorative pattern"
         >
-      </div>
+      </div> -->
       <div class="main-text">
         <p>Welcome to Lucky Friday, the most customizable budgeting app on the market today.</p>
       </div>
@@ -142,9 +141,16 @@ const joinWaitlist = async () => {
 
 <style scoped>
 
+.main-bg {
+  background-image: url('/src/assets/bluebg.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
 .top-content {
-  height: 100dvh;
-  background: #004751;
+  min-height: 100dvh;
+  overflow: auto;
   color: #48ffcd;
   overflow: hidden;
   position: relative;
