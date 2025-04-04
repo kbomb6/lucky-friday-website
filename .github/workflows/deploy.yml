@@ -16,3 +16,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+      - run: |
+          echo "=== ENV DUMP ==="
+          printenv | grep VITE
+          echo "=== BUILD FILES ==="
+          grep -r "EMAILJS" dist/ || echo "No vars found in build"

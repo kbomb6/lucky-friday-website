@@ -20,12 +20,11 @@ const joinWaitlist = async () => {
   isLoading.value = true;
   errorMessage.value = '';
 
-  console.log('Env vars:', {
-    user: import.meta.env.VITE_EMAILJS_USER_ID,
-    service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-    template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-  })
-  console.log('test');
+  console.log('Env Vars:', {
+  user: import.meta.env.VITE_EMAILJS_USER_ID,
+  service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+})
 
   try {
     const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
