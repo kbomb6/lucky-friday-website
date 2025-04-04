@@ -8,7 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 export default defineConfig(({command, mode }) => {
   const env = loadEnv(mode, process.cwd(), ['VITE_'])
 
-  return {
+  const config = {
     base: '/',
     build: {
       outDir: 'dist',
@@ -26,9 +26,9 @@ export default defineConfig(({command, mode }) => {
       }
     },
     define: {
-      'import.meta.env.VITE_EMAILJS_USER_ID': JSON.stringify(env.VITE_EMAILJS_USER_ID),
-      'import.meta.env.VITE_EMAILJS_SERVICE_ID': JSON.stringify(env.VITE_EMAILJS_SERVICE_ID),
-      'import.meta.env.VITE_EMAILJS_TEMPLATE_ID': JSON.stringify(env.VITE_EMAILJS_TEMPLATE_ID)
+      'process.env': {},
     }
   }
+
+  return config
 })
