@@ -27,9 +27,9 @@ const joinWaitlist = async () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        service_id: 'service_zwwdg6c',
-        template_id: 'template_jmw65r8',
-        user_id: '9F-ZdlgrgAfWad2lO',
+        service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        user_id: import.meta.env.VITE_EMAILJS_USER_ID,
         template_params: {
           to_email: 'bauman.kellyk@gmail.com',
           name: formData.value.firstName + ' ' + formData.value.lastName,
@@ -104,36 +104,10 @@ const joinWaitlist = async () => {
         </div>
       </div>
     </div>
-
-    <!-- Section 2: App Showcase -->
-    <!-- <div class="section-two">
-      <h2 class="headline">The App</h2>
-      <div class="svg-bg-text-container">
-        <h2>150 + Beta user waitlist</h2>
-      </div>
-      <div class="screenshot-container">
-        <div class="column-1">
-          <img src="@/assets/screenshots/budget.png" alt="app screenshot">
-        </div>
-        <div class="column-2">
-          <img src="@/assets/screenshots/rules.png" alt="app screenshot">
-        </div>
-        <div class="column-3"><img src="@/assets/screenshots/rules.png" alt="app screenshot"></div>
-        <div class="column-4"><img src="@/assets/screenshots/rules.png" alt="app screenshot"></div>
-        <div class="column-5">
-          <div class="pill-content">Manual or automatic autocategorization rules</div>
-          <div class="pill-content">User defined icons and colors</div>
-          <div class="pill-content">Monthly or Annual budgets for 3 years</div>
-          <div class="pill-content">Custom Titles and descriptions </div>
-        </div>
-      </div>
-    </div> -->
-
   </div>
 </template>
 
 <style scoped>
-
 .main-bg {
   background-image: url('/src/assets/bluebg.png');
   background-size: cover;
@@ -145,154 +119,37 @@ const joinWaitlist = async () => {
   color: #48ffcd;
   overflow: hidden;
   position: relative;
-  padding: 0 2em;
+  padding: 0 1em;
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  height: 100%;
+  height: 100dvh;
   overflow: auto;
 }
 
 .waitlist-wrapper {
   position: relative;
-  margin-top: 5em;
-
-  @media only screen 
-    and (max-width: 375px) 
-    and (max-height: 667px) {
-    margin-top: 2em;
-    padding-left: 1em;
-  }
-}
-
-.svg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 110%;
-  height: 130%;
-  object-fit: cover;
-  pointer-events: none;
-  object-position: left;
-  opacity: 0.5;
+  margin-top: 2em;
+  padding: 0 0.5em;
 }
 
 .main-text {
-  z-index: 3;
   position: relative;
   font-weight: bold;
 }
 
 .main-logo {
-  margin-top: 2em;
-  max-width: 150px;
+  margin-top: 1em;
+  max-width: 120px;
   z-index: 5;
   position: relative;
 }
 
-.section-two {
-  height: 100dvh;
-  position: relative;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.svg-bg-text-container {
-  background: url('@/assets/svgs/splotch.svg') no-repeat center center;
-  background-size: contain;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 25rem;
-  height: 25rem;
-  margin-left: 1em;
-  position: absolute;
-  top: -70px;
-  z-index: 2;
-}
-
-.screenshot-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  box-sizing: border-box;
-  padding-bottom: 2em;
-  gap: 1em;
-  margin: 150px 4em 3em 4em;
-}
-
-.screenshot-container img {
-  max-width: 80%;
-  max-height: 80%;
-  height: auto;
-  display: block;
-}
-
-.top-content h1 {
-  font-size: 7rem;
-  margin-top: 0.5em;
-}
-
-.main-text p {
-  font-size: 1.5rem;
-}
-
-.headline {
-  margin: 0 auto;
-  font-size: 5rem;
-  max-width: 500px;
-  color: #1954b6;
-  padding-top: 0.5em;
-  position: relative;
-  z-index: 3;
-}
-
-.svg-bg-text-container h2 {
-  color: #29f29b;
-  font-size: 2rem;
-  max-width: 200px;
-  position: relative;
-  z-index: 3;
-}
-
-.column-5 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-height: 80%;
-}
-
-.pill-content {
-  color: #bbff16;
-  background: #004751;
-  padding: 2em 1em;
-  border-radius: 50px;
-  font-weight: bold;
-  min-height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.section-three {
-  height: 100dvh;
-  background: #1954b6;
-}
-
-.waitlist {
-  margin: 0 auto;
-  font-size: 5rem;
-  color: #1954b6;
-  padding-top: 0.5em;
-  color: #ffffff;
-}
-
 .names {
   display: flex;
-  margin-top: 1em;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1em;
-  gap: 1em;
+  flex-direction: column;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  gap: 0.5em;
 }
 
 .form-wrapper {
@@ -300,6 +157,7 @@ const joinWaitlist = async () => {
   align-items: center;
   display: flex;
   justify-content: center;
+  padding: 0 0.5em;
 }
 
 label {
@@ -311,8 +169,8 @@ label {
   width: 100%;
   background: #48ffcd;
   border-radius: 30px;
-  padding: 1em;
-  margin-top: 3em;
+  padding: 0.75em;
+  margin-top: 1.5em;
   color: #004751;
   font-weight: bold;
   letter-spacing: 0.5px;
@@ -322,11 +180,21 @@ label {
   position: relative;
   z-index: 3;
   color: #ffffff;
-  margin-top: 5em;
+  margin-top: 2em;
+  padding: 0 1em;
 }
 
 .success-message button {
   width: auto;
+}
+
+.input {
+  padding: 0.75em;
+  border-radius: 30px;
+  border: 2px solid #48ffcd;
+  width: 100%;
+  background: transparent;
+  color: white;
 }
 
 .main-text p {
@@ -335,5 +203,46 @@ label {
 
 .waitlist {
   font-size: clamp(2rem, 6vw, 5rem);
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+@media (min-width: 769px) {
+  .top-content {
+    padding: 0 2em;
+  }
+  
+  .waitlist-wrapper {
+    margin-top: 5em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .main-logo {
+    margin-top: 2em;
+    max-width: 150px;
+  }
+  
+  .names {
+    flex-direction: row;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    gap: 1em;
+  }
+  
+  .submit-button {
+    margin-top: 3em;
+    padding: 1em;
+  }
+  
+  .success-message {
+    margin-top: 5em;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-logo {
+    max-width: 140px;
+  }
 }
 </style>

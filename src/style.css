@@ -89,6 +89,10 @@ button:focus-visible {
   outline: none;
 }
 
+input:autofill {
+  background-color: transparent;
+}
+
 fieldset {
   border: none;
   text-align: left;
