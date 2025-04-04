@@ -88,21 +88,21 @@ const joinWaitlist = async () => {
             <fieldset>
               <div class="names">
                 <div>
-                  <label for="question1">First Name</label>
-                  <input v-model="formData.firstName" required type="text" class="input" />
+                  <label for="first">First Name</label>
+                  <input id="first" v-model="formData.firstName" required type="text" class="input" />
                 </div>
                 <div>
-                  <label for="question1">Last Name </label>
-                  <input v-model="formData.lastName" required type="text" class="input" />
+                  <label for="last">Last Name </label>
+                  <input id="last" v-model="formData.lastName" required type="text" class="input" />
                 </div>
               </div>
               <div>
                 <label for="email">Email</label>
-                <input v-model="formData.email" required type="email" class="input">
+                <input id="email" v-model="formData.email" required type="email" class="input">
               </div>
               <div class="honey-pot">
                 <label for="human">Human</label>
-                <input tabindex="-1" v-model="formData.botTrap" type="text" class="input" autocomplete="off">
+                <input id="human" tabindex="-1" v-model="formData.botTrap" type="text" class="input" autocomplete="off">
               </div>
             </fieldset>
             <div>
