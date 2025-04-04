@@ -13,10 +13,15 @@ const errorMessage = ref('')
 
 const resetForm = ()=> {
   isSuccess.value = false;
-  formData.value = { firstName: '', lastName: '', email: '' };
+  formData.value = { firstName: '', lastName: '', email: '', botTrap: '' };
 }
 
 const joinWaitlist = async () => {
+  if (formData.value.botTrap) {
+    errorMessage.value = 'Spam detected.';
+    return;
+  }
+
   isLoading.value = true;
   errorMessage.value = '';
 
@@ -92,7 +97,11 @@ const joinWaitlist = async () => {
               </div>
               <div>
                 <label for="email">Email</label>
-                <input v-model="formData.email" required type="email" class="input">
+                <input tabindex="-1" v-model="formData.email" required type="email" class="input">
+              </div>
+              <div style="display:none">
+                <label for="email">Email</label>
+                <input v-model="formData.botTrap" type="text" class="input" autocomplete="off">
               </div>
             </fieldset>
             <div>
