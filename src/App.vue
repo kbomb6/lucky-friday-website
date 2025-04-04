@@ -4,7 +4,8 @@ import { ref } from 'vue'
 const formData = ref({
   firstName: '',
   lastName: '',
-  email: ''
+  email: '',
+  botTrap: ''
 })
 
 const isLoading = ref(false)
