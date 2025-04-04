@@ -62,7 +62,7 @@ const joinWaitlist = async () => {
   <div class="main-bg">
     <div class="top-content">
       <img
-      src="/Users/work/lucky-friday-website/src/assets/Lucky Friday Bright Icon.png"
+      src="@/assets/Lucky Friday Bright Icon.png"
       class="main-logo"
       alt="logo">
       <div class="main-text">
