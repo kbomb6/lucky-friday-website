@@ -23,11 +23,6 @@ export default defineConfig({
     }
   },
   define: {
-    'import.meta.env': JSON.stringify({
-      ...env,
-      VITE_EMAILJS_USER_ID: env.VITE_EMAILJS_USER_ID,
-      VITE_EMAILJS_SERVICE_ID: env.VITE_EMAILJS_SERVICE_ID,
-      VITE_EMAILJS_TEMPLATE_ID: env.VITE_EMAILJS_TEMPLATE_ID
-    })
+    'process.env': {},
   }
 })

@@ -25,6 +25,7 @@ const joinWaitlist = async () => {
     service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
     template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID
   })
+  console.log('test');
 
   try {
     const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
