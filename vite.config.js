@@ -6,9 +6,10 @@ import { dirname, resolve } from 'node:path'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig(({ mode }) => {
+  // Load all VITE_ prefixed env vars
   const env = loadEnv(mode, process.cwd(), ['VITE_'])
 
-  const config = {
+  return {
     base: '/',
     build: {
       outDir: 'dist',
@@ -26,9 +27,12 @@ export default defineConfig(({ mode }) => {
       }
     },
     define: {
-      'process.env': {},
+      'import.meta.env': JSON.stringify({
+        ...loadEnv(mode, process.cwd(), ['VITE_']),
+        VITE_EMAILJS_USER_ID: process.env.VITE_EMAILJS_USER_ID,
+        VITE_EMAILJS_SERVICE_ID: process.env.VITE_EMAILJS_SERVICE_ID,
+        VITE_EMAILJS_TEMPLATE_ID: process.env.VITE_EMAILJS_TEMPLATE_ID
+      })
     }
   }
-
-  return config
 })
