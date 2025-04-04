@@ -20,7 +20,7 @@ const joinWaitlist = async () => {
   isLoading.value = true;
   errorMessage.value = '';
 
-  console.log('Env Vars:', {
+  console.log('Env Vars :', {
   user: import.meta.env.VITE_EMAILJS_USER_ID,
   service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
   template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID
