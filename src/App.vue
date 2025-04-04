@@ -98,11 +98,11 @@ const joinWaitlist = async () => {
               </div>
               <div>
                 <label for="email">Email</label>
-                <input tabindex="-1" v-model="formData.email" required type="email" class="input">
+                <input v-model="formData.email" required type="email" class="input">
               </div>
               <div class="honey-pot">
                 <label for="human">Human</label>
-                <input v-model="formData.botTrap" type="text" class="input" autocomplete="off">
+                <input tabindex="-1" v-model="formData.botTrap" type="text" class="input" autocomplete="off">
               </div>
             </fieldset>
             <div>
