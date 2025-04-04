@@ -99,8 +99,8 @@ const joinWaitlist = async () => {
                 <label for="email">Email</label>
                 <input tabindex="-1" v-model="formData.email" required type="email" class="input">
               </div>
-              <div style="display:none">
-                <label for="email">Email</label>
+              <div class="honey-pot">
+                <label for="human">Human</label>
                 <input v-model="formData.botTrap" type="text" class="input" autocomplete="off">
               </div>
             </fieldset>
@@ -214,6 +214,10 @@ label {
   font-size: clamp(2rem, 6vw, 5rem);
   margin: 0 auto;
   color: #ffffff;
+}
+
+.honey-pot {
+  display: none;
 }
 
 @media (min-width: 769px) {
