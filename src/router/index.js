@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 // const Pitchdeck = () => import('@/views/PitchDeck.vue')
 import PitchDeck from '../views/PitchDeck.vue';
 // const OnePage = () => import('@/views/OnePage.vue')
