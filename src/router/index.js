@@ -1,9 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-// const Pitchdeck = () => import('@/views/PitchDeck.vue')
 import PitchDeck from '../views/PitchDeck.vue';
-// const OnePage = () => import('@/views/OnePage.vue')
 import OnePage from '../views/OnePage.vue';
-// const Demo = () => import('@/views/Demo.vue')
 import Demo from '../views/Demo.vue';
 
 const routes = [
