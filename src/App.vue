@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import { RouterView } from 'vue-router'
 
+// Your existing form logic remains unchanged
 const formData = ref({
   firstName: '',
   lastName: '',
@@ -59,12 +61,14 @@ const joinWaitlist = async () => {
 </script>
 
 <template>
-  <div class="main-bg">
+  <RouterView />
+
+  <div v-if="$route.path === '/'" class="main-bg">
     <div class="top-content">
       <img
-      src="@/assets/Lucky Friday Bright Icon.png"
-      class="main-logo"
-      alt="logo">
+        src="@/assets/Lucky Friday Bright Icon.png"
+        class="main-logo"
+        alt="logo">
       <div class="main-text">
         <p>Welcome to Lucky Friday, the most customizable budgeting app on the market today.</p>
       </div>
@@ -118,6 +122,7 @@ const joinWaitlist = async () => {
 </template>
 
 <style scoped>
+/* Your existing styles remain unchanged */
 .main-bg {
   background-image: url('/src/assets/bluebg.png');
   background-size: cover;
