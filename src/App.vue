@@ -1,11 +1,13 @@
 <template>
   <div id="app">
+    <SiteHeader></SiteHeader>
     <RouterView />
   </div>
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router'
+import SiteHeader from './components/menu.vue'
 </script>
 
 <style>
