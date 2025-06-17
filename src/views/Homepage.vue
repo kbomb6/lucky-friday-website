@@ -2,8 +2,10 @@
 import { ref } from 'vue'
 import { RouterView } from 'vue-router'
 function getDelay(index) {
-  const randomDelay = Math.random() * 1.2 + 0.1;
-  return `animation-delay: ${randomDelay}s`;
+  const fadeInDelay = (Math.random() * 1.2 + 0.1).toFixed(2); // 0.1s – 1.3s
+  const glowDelay = (Math.random() * 3).toFixed(2); // 0s – 3s
+  const glowDuration = (Math.random() * 2 + 3).toFixed(2); // 3s – 5s
+  return `animation-delay: ${fadeInDelay}s, ${glowDelay}s; animation-duration: 1.4s, ${glowDuration}s;`;
 }
 </script>
 
@@ -21,28 +23,15 @@ function getDelay(index) {
                 <img src="../assets/darklogo.png" class="logo-mtn"/>
             </div>
         </div>
-        <div class="half-section dark-section">
-            Homepage
+        <div class="half-section dark-section p-2">
+            <div class="overview-card dark-overview-card light-grey-text">
+                Test
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-.section {
-    height: 100vh;
-}
-
-.half-section {
-    height: 50vh;
-}
-
-.teal-background {
-    background-color: #004751;
-}
-
-.dark-section {
-    background-color: #171e29;
-}
 
 .circle-gradient {
     background: radial-gradient(
@@ -93,7 +82,8 @@ function getDelay(index) {
 
 .letter {
   opacity: 0;
-  animation: fadeInGlow 1.4s forwards ease-out;
+  animation: fadeInGlow 1.4s forwards ease-out,
+  softGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes fadeInGlow {
@@ -114,6 +104,15 @@ function getDelay(index) {
     opacity: 1;
     filter: none;
     text-shadow: none;
+  }
+}
+
+@keyframes softGlow {
+  0% {
+    opacity: 70%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 </style>

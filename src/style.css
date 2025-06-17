@@ -113,6 +113,57 @@ p {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
+.light-grey-text {
+  color: #d4d2d2;
+}
+
+.section {
+    height: 100vh;
+}
+
+.half-section {
+    height: 50vh;
+}
+
+.teal-background {
+    background-color: #004751;
+}
+
+.dark-section {
+    background-color: #171e29;
+}
+
+.overview-card {
+  border-radius: 5px;
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1em 0.5em;
+}
+
+.dark-overview-card {
+  background: black;
+  border: 1px solid #48ffcd;
+}
+
+.button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  font-size: 1em;
+}
+
+.filter-button {
+  color: white;
+  border: 1px solid #d8dade;
+  background: transparent;
+  white-space: nowrap;
+  width: 100%;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
