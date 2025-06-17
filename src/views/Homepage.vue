@@ -1,7 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterView } from 'vue-router'
-
+function getDelay(index) {
+  const randomDelay = Math.random() * 1.2 + 0.1;
+  return `animation-delay: ${randomDelay}s`;
+}
 </script>
 
 <template>
@@ -10,10 +13,11 @@ import { RouterView } from 'vue-router'
             <div class="half-section top-section">
                 <!-- <h1 class="headline">Welcome to the most customizable budgeting app</h1> -->
                 <!-- <h1 class="headline">Your budget. Your way.</h1> -->
-                 <div class="headline-container">
-                    <h1 class="headline">Lucky</h1>
-                    <h1 class="headline">Friday</h1>
-                 </div>
+                 <h1 class="headline">
+                    <span v-for="(char, index) in 'LUCKY FRIDAY'" :key="index" class="letter" :style="getDelay(index)">
+                        {{ char }}
+                    </span>
+                </h1>
                 <img src="../assets/darklogo.png" class="logo-mtn"/>
             </div>
         </div>
@@ -71,18 +75,45 @@ import { RouterView } from 'vue-router'
 .headline-container {
   z-index: 2;
   position: relative;
+  display: flex;
+  gap: 2em;
 }
 
 .headline {
   color: white;
-  /* font-family: 'League Spartan', sans-serif; */
   font-family: 'Codystar', sans-serif;
   font-size: clamp(2.5rem, 8vw, 6rem);
   color: #48ffcd;
-  /* color: #005864; */
   text-align: center;
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: 10px;
+  z-index: 2;
+}
+
+.letter {
+  opacity: 0;
+  animation: fadeInGlow 1.4s forwards ease-out;
+}
+
+@keyframes fadeInGlow {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    text-shadow: none;
+    transform: translateY(10px);
+  }
+  70% {
+    opacity: 1;
+    filter: blur(0px);
+    text-shadow: 0 0 10px #48ffcd, 0 0 20px #004751;
+    transform: translateY(0);
+  }
+  100% {
+    text-shadow: 0 0 6px #48ffcd;
+    opacity: 1;
+    filter: none;
+    text-shadow: none;
+  }
 }
 </style>
