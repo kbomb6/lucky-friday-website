@@ -297,7 +297,7 @@ const scrollRight = () => {
         <div class="dark-section p-2">
             <div class="overview-card dark-overview-card mt-4">
                 <h2>Need Help or Have Questions?</h2>
-                <div class="d-flex support-block">
+                <div class="d-flex support-block mt-4">
                     <button class="button teal-button">Browse FAQs</button>
                     <button class="button teal-outline-button">Read our documentation</button>
                     <button class="button teal-button">Contact Support</button>
