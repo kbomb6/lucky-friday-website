@@ -1,9 +1,10 @@
 <template>
   <header class="site-header">
     <nav class="nav-left">
-      <RouterLink to="/pitchdeck" class="transparent-button">About Us</RouterLink>
-      <RouterLink to="/demo" class="transparent-button">Help Desk</RouterLink>
-      <RouterLink to="/onepage" class="transparent-button">One Page</RouterLink>
+      <RouterLink to="/pitchdeck" class="transparent-button">Features</RouterLink>
+      <RouterLink to="/onepage" class="transparent-button">Pricing</RouterLink>
+      <RouterLink to="/onepage" class="transparent-button">Security</RouterLink>
+      <RouterLink to="/demo" class="transparent-button">Support</RouterLink>
     </nav>
     
     
@@ -28,7 +29,7 @@ import { RouterLink } from 'vue-router'
   top: 0;
   width: 100%;
   z-index: 10;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Josefin Sans'
 }
 
 .nav-left {
@@ -54,6 +55,10 @@ import { RouterLink } from 'vue-router'
   box-sizing: border-box;
 }
 
+.nav-left a:hover {
+    border: 1px solid #0a52d8;
+}
+
 .login-button {
     background: #137b89;
     color: white;
@@ -64,4 +69,6 @@ import { RouterLink } from 'vue-router'
 .login-button:hover {
   opacity: 0.75;
 }
+
+
 </style>
