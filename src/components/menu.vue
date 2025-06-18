@@ -53,6 +53,7 @@ import { RouterLink } from 'vue-router'
   line-height: 1;
   border: 1px solid transparent;
   box-sizing: border-box;
+  font-family: 'Josefin Sans'
 }
 
 .nav-left a:hover {

@@ -297,10 +297,10 @@ const scrollRight = () => {
         <div class="dark-section p-2">
             <div class="overview-card dark-overview-card mt-4">
                 <h2>Need Help or Have Questions?</h2>
-                <div class="d-flex">
-                    <button class="button blue-button">Browse FAQs</button>
-                    <button class="button blue-outline-button">Read our documentation</button>
-                    <button class="button blue-button">Contact Support</button>
+                <div class="d-flex support-block">
+                    <button class="button teal-button">Browse FAQs</button>
+                    <button class="button teal-outline-button">Read our documentation</button>
+                    <button class="button teal-button">Contact Support</button>
                 </div>
             </div>
         </div>
@@ -550,7 +550,6 @@ const scrollRight = () => {
 }
 
 .global-section {
-  padding: 3rem 1.5rem;
   font-family: 'Josefin Sans', sans-serif;
   text-align: left;
 }
@@ -662,7 +661,6 @@ const scrollRight = () => {
 
 .testimonials-section {
   color: white;
-  padding: 3rem 1.5rem;
 }
 
 .testimonials-wrapper {
@@ -777,5 +775,11 @@ const scrollRight = () => {
     flex-direction: column;
     overflow-x: hidden;
   }
+}
+
+.support-block {
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
 }
 </style>
