@@ -11,6 +11,18 @@ function getDelay(index) {
   const glowDuration = (Math.random() * 2 + 3).toFixed(2);
   return `animation-delay: ${fadeInDelay}s, ${glowDelay}s; animation-duration: 1.4s, ${glowDuration}s;`;
 }
+
+const features = [
+  { name: 'Create Transactions', free: 'Unlimited', pro: 'Unlimited' },
+  { name: 'Create Categories', free: 'Yes', pro: 'Yes' },
+  { name: 'Create Subcategories', free: 'Yes', pro: 'Yes' },
+  { name: 'Auto Categorization Rules', free: 'Yes', pro: 'Yes' },
+  { name: 'Custom Icons', free: 'Yes', pro: 'Yes' },
+  { name: 'Custom Colors', free: 'Yes', pro: 'Yes' },
+  { name: 'Net Worth Snapshots', free: 'Yes', pro: 'Yes' },
+  { name: 'Import Transactions with real time data', free: 'No', pro: 'Yes' },
+  { name: 'Get up to date bank balances', free: 'No', pro: 'Yes' }
+];
 </script>
 
 <template>
@@ -90,7 +102,7 @@ function getDelay(index) {
                         image here
                     </div>
                     <div class="even-column">
-                        <h3>Fully Customizable</h3>
+                        <h2>Fully Customizable</h2>
                         <p class="light-grey-text">
                             Create your own categories, subcategories, icons, and colors. Your budget should fit your brain, not the other way around.
                         </p>
@@ -102,7 +114,7 @@ function getDelay(index) {
             <div class="overview-card dark-overview-card features-section mt-4">
                 <div>
                     <div>
-                        <h3>Powerful Auto Categorization</h3>
+                        <h2>Powerful Auto Categorization</h2>
                         <p class="light-grey-text">
                             Automate your spending insights with unlimited rules that you control. No confusing AI guesses, just exactly how you want it.
                         </p>
@@ -117,7 +129,7 @@ function getDelay(index) {
             <div class="overview-card dark-overview-card features-section mt-4">
                 <div class="d-flex flex-row column-wrapper">
                     <div class="even-column">
-                        <h3>Real-Time Syncing</h3>
+                        <h2>Real-Time Syncing</h2>
                         <p class="light-grey-text">
                             Connect your bank accounts securely with Plaid and get up-to-date insights across devices.
                         </p>
@@ -135,7 +147,7 @@ function getDelay(index) {
                         <img :src="budget" alt="Budgets screenshot">
                     </div>
                     <div class="even-column">
-                        <h3>Monthly and Annual Budgets</h3>
+                        <h2>Monthly and Annual Budgets</h2>
                         <p class="light-grey-text">
                             You should be able to budget however you want. So whether you used zero-based budgeting or flexible budgeting, we have got you covered.
                         </p>
@@ -148,28 +160,65 @@ function getDelay(index) {
         </div>
         <div class="dark-section p-2">
             <div class="overview-card dark-overview-card mt-4">
-                <h3>Pricing</h3>
+                <h2>Pricing</h2>
                 <h4>Try Premium Free for 7 Days</h4>
+                <div class="comparison-table">
+                    <div class="table-wrapper">
+                        <div class="table-row header">
+                            <div class="cell feature">Features</div>
+                            <div class="cell free">
+                            <strong>Free forever</strong>
+                            <div class="price">$0/month</div>
+                            </div>
+                            <div class="cell pro">
+                            <strong>Premium</strong>
+                            <div class="price">$12.99/month</div>
+                            </div>
+                        </div>
+                        <div class="table-row" v-for="(feature, i) in features" :key="i">
+                            <div class="cell feature">{{ feature.name }}</div>
+                            <div class="cell free">{{ feature.free }}</div>
+                            <div class="cell pro">{{ feature.pro }}</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="dark-section p-2">
             <div class="overview-card dark-overview-card mt-4">
-                <h3>Built with Security from the Ground Up</h3>
-                <ul class="text-start">
-                    <li>We use the Industry Leader, Plaid to connect your bank account. We can't view your bank credentials and we never store them.</li>
-                    <li>Your data is yours. You control your rules, your bank syncing, and categories. Want us to hard delete all of your data? No problem, just email support and it's done.</li>
-                    <li>End-to-end encryption and strict privacy controls baked into every layer of the app.</li>
-                </ul>
+                <div class="global-section">
+                    <h2>Built with Security<br>from the Ground Up.</h2>
+                    <div class="info-pairs">
+                        <div class="pair">
+                            <div class="info-block size-1">
+                                <p>End-to-end encryption and strict privacy controls baked into every layer of the app.</p>
+                            </div>
+                            <div class="stat-block">1m+<br><span>users</span></div>
+                        </div>
+                        <div class="pair">
+                            <div class="info-block size-2">
+                                <p>We use the Industry Leader, Plaid to connect your bank account. We can't view your bank credentials and we never store them.</p>
+                            </div>
+                            <div class="stat-block">50+<br><span>languages</span></div>
+                        </div>
+                        <div class="pair">
+                            <div class="info-block size-3">
+                                <p>Your data is yours. You control your rules, your bank syncing, and categories. Want us to hard delete all of your data? No problem, just email support and it's done.</p>
+                            </div>
+                            <div class="stat-block">100+<br><span>instructors</span></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="dark-section p-2">
             <div class="overview-card dark-overview-card mt-4">
-                What our users say
+                <h3>What our users say</h3>
             </div>
         </div>
         <div class="dark-section p-2">
             <div class="overview-card dark-overview-card mt-4">
-                <h3>Need Help or Have Questions?</h3>
+                <h2>Need Help or Have Questions?</h2>
                 <div class="d-flex">
                     <button class="button blue-button">Browse FAQs</button>
                     <button class="button blue-outline-button">Read our documentation</button>
@@ -359,5 +408,168 @@ function getDelay(index) {
 .transactions-list img, .budget-image img {
     max-height: 500px;
     text-align: center;
+}
+
+.comparison-table {
+  padding: 2rem;
+  color: #000;
+  background: #fdfcf8;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.comparison-table h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #222;
+}
+
+.table-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-row {
+  display: contents;
+}
+
+.cell {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.feature {
+  text-align: left;
+  font-weight: 600;
+}
+
+.header .cell {
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #000;
+}
+
+.price {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.pro {
+  background-color: #a2efb1;
+}
+
+.global-section {
+  padding: 3rem 1.5rem;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: left;
+}
+
+.global-section h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.info-pairs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pair {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.info-block {
+  background: #ffeecf;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  flex-grow: 1;
+  color: #3a3d41;
+}
+
+.size-1 {
+  flex: 0 0 60%;
+}
+
+.size-2 {
+  flex: 0 0 70%;
+}
+
+.size-3 {
+  flex: 0 0 80%;
+}
+
+.stat-block {
+  background: #ffdba3;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #111;
+  flex-shrink: 0;
+  width: 160px;
+}
+
+.stat-block span {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: 0.25rem;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .pair {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .stat-block {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    display: block;
+  }
+
+  .table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 1rem;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .feature {
+    grid-column: span 2;
+    font-size: 1.1rem;
+    background: #f0f0f0;
+  }
+
+  .cell {
+    border-bottom: none;
+    border-top: 1px solid #ddd;
+  }
+
+  .pro {
+    background-color: #d7f7e3;
+  }
 }
 </style>
