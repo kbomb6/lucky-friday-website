@@ -23,6 +23,16 @@ const features = [
   { name: 'Import Transactions with real time data', free: 'No', pro: 'Yes' },
   { name: 'Get up to date bank balances', free: 'No', pro: 'Yes' }
 ];
+
+const testimonialContainer = ref(null)
+
+const scrollLeft = () => {
+  testimonialContainer.value.scrollBy({ left: -320, behavior: 'smooth' })
+}
+
+const scrollRight = () => {
+  testimonialContainer.value.scrollBy({ left: 320, behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -213,7 +223,75 @@ const features = [
         </div>
         <div class="dark-section p-2">
             <div class="overview-card dark-overview-card mt-4">
-                <h3>What our users say</h3>
+                <section class="testimonials-section">
+                    <div class="testimonials-wrapper">
+                    <div class="testimonials-header">
+                        <h2>Hear from our Users</h2>
+                        <p class="light-text">
+                        Find our what existing Lucky Friday<br>
+                        users think about our app.
+                        </p>
+                        <div class="arrow-buttons">
+                        <button class="arrow-button" @click="scrollLeft">←</button>
+                        <button class="arrow-button" @click="scrollRight">→</button>
+                        </div>
+                    </div>
+
+                    <div ref="testimonialContainer" class="testimonials-scroll">
+                        <div class="testimonial-card purple">
+                        <p class="testimonial-text">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique..."
+                        </p>
+                        <div class="user">
+                            <img src="https://i.pravatar.cc/80?img=13" alt="Emma Darcy" />
+                            <div>
+                            <h4>Emma Darcy</h4>
+                            <p class="light-text">Travel Ready graduate</p>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="testimonial-card green">
+                        <p class="testimonial-text">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique..."
+                        </p>
+                        <div class="user">
+                            <img src="https://i.pravatar.cc/80?img=11" alt="Sofia Patel" />
+                            <div>
+                            <h4>Sofia Patel</h4>
+                            <p class="light-text">Casual Learner graduate</p>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="testimonial-card purple">
+                        <p class="testimonial-text">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique..."
+                        </p>
+                        <div class="user">
+                            <img src="https://i.pravatar.cc/80?img=13" alt="Emma Darcy" />
+                            <div>
+                            <h4>Emma Darcy</h4>
+                            <p class="light-text">Travel Ready graduate</p>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="testimonial-card green">
+                        <p class="testimonial-text">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique..."
+                        </p>
+                        <div class="user">
+                            <img src="https://i.pravatar.cc/80?img=14" alt="Liam Nguyen" />
+                            <div>
+                            <h4>Liam Nguyen</h4>
+                            <p class="light-text">Budget Pro graduate</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
             </div>
         </div>
         <div class="dark-section p-2">
@@ -579,6 +657,125 @@ const features = [
 
   .pro {
     background-color: #d7f7e3;
+  }
+}
+
+.testimonials-section {
+  color: white;
+  padding: 3rem 1.5rem;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.testimonials-header {
+  max-width: 300px;
+  flex: 0 0 auto;
+}
+
+.testimonials-header h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.testimonials-header .light-text {
+  font-size: 1rem;
+  color: #c5c5c5;
+  text-align: left;
+}
+
+.arrow-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.arrow-button {
+  background: #ff6c6c;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.arrow-button:hover {
+  transform: scale(1.1);
+}
+
+.testimonials-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  flex: 1;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.testimonial-card {
+  flex: 0 0 300px;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  scroll-snap-align: start;
+  background: #ccc;
+  color: #1a1a1a;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+}
+
+.testimonial-card h4 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.testimonial-card .light-text {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  color: #555;
+}
+
+.purple {
+  background-color: #c3b5f5;
+}
+
+.green {
+  background-color: #aef5c3;
+}
+
+@media (max-width: 768px) {
+  .testimonials-wrapper {
+    flex-direction: column;
+  }
+  .testimonials-scroll {
+    flex-direction: column;
+    overflow-x: hidden;
   }
 }
 </style>
