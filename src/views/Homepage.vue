@@ -193,19 +193,19 @@ const features = [
                             <div class="info-block size-1">
                                 <p>End-to-end encryption and strict privacy controls baked into every layer of the app.</p>
                             </div>
-                            <div class="stat-block">1m+<br><span>users</span></div>
+                            <div class="stat-block">🔒<br></div>
                         </div>
                         <div class="pair">
                             <div class="info-block size-2">
                                 <p>We use the Industry Leader, Plaid to connect your bank account. We can't view your bank credentials and we never store them.</p>
                             </div>
-                            <div class="stat-block">50+<br><span>languages</span></div>
+                            <div class="stat-block">🔗<br></div>
                         </div>
                         <div class="pair">
                             <div class="info-block size-3">
                                 <p>Your data is yours. You control your rules, your bank syncing, and categories. Want us to hard delete all of your data? No problem, just email support and it's done.</p>
                             </div>
-                            <div class="stat-block">100+<br><span>instructors</span></div>
+                            <div class="stat-block">🛡️<br></div>
                         </div>
                     </div>
                 </div>
@@ -412,9 +412,11 @@ const features = [
 
 .comparison-table {
   padding: 2rem;
-  color: #000;
-  background: #fdfcf8;
+  color: #d4d2d2;
+  background: #212e3e;
   font-family: 'Josefin Sans', sans-serif;
+  margin: 2em;
+  border-radius: 8px;
 }
 
 .comparison-table h2 {
@@ -457,12 +459,16 @@ const features = [
 .price {
   font-weight: normal;
   font-size: 0.9rem;
-  color: #666;
+  color: #999595;
   margin-top: 0.25rem;
 }
 
+.pro .price {
+    color: black;
+}
+
 .pro {
-  background-color: #a2efb1;
+  background-color: green;
 }
 
 .global-section {
@@ -518,10 +524,13 @@ const features = [
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 1;
   color: #111;
   flex-shrink: 0;
   width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stat-block span {
