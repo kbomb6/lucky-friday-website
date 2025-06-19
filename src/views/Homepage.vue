@@ -795,6 +795,11 @@ const contactSupport = () => {
     max-width: 100%;
     text-align: center;
   }
+
+  .top-section img {
+    width: 90%;
+    bottom: 20px;
+  }
 }
 
 .support-block {
