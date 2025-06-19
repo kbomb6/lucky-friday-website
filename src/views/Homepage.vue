@@ -52,8 +52,7 @@ const scrollRight = () => {
                 <div class="features-header">
                 <h2>The #1 app for managing your money</h2>
                 <p class="light-grey-text">
-                    100,000+ users trust Lucky Friday to take control of their budgets with smart tools,
-                    customizable insights, and privacy-first design.
+                    Built by real users, for real budgets. Lucky Friday is growing fast as the go-to app for personalized, secure money management. 
                 </p>
                 </div>
 
@@ -105,7 +104,7 @@ const scrollRight = () => {
                 </div>
             </div>
         </div>
-        <div class="dark-section p-2">
+        <div id="features" class="dark-section p-2">
             <div class="overview-card dark-overview-card features-section mt-4">
                 <div class="d-flex flex-row column-wrapper">
                     <div class="even-column">
@@ -114,7 +113,7 @@ const scrollRight = () => {
                     <div class="even-column">
                         <h2>Fully Customizable</h2>
                         <p class="light-grey-text">
-                            Create your own categories, subcategories, icons, and colors. Your budget should fit your brain, not the other way around.
+                            Budgeting isn’t one-size-fits-all. That’s why Lucky Friday lets you fully customize your categories, colors, and icons, so your finances finally make sense to you.
                         </p>
                     </div>
                 </div>
@@ -126,7 +125,7 @@ const scrollRight = () => {
                     <div>
                         <h2>Powerful Auto Categorization</h2>
                         <p class="light-grey-text">
-                            Automate your spending insights with unlimited rules that you control. No confusing AI guesses, just exactly how you want it.
+                            Tired of apps mislabeling your transactions? With Lucky Friday, you create the rules. Automatically organize your spending your way. No surprises, no confusing AI, just total control.
                         </p>
                     </div>
                      <div>
@@ -141,7 +140,7 @@ const scrollRight = () => {
                     <div class="even-column">
                         <h2>Real-Time Syncing</h2>
                         <p class="light-grey-text">
-                            Connect your bank accounts securely with Plaid and get up-to-date insights across devices.
+                            Securely connect your bank, investment, and loan accounts with Plaid and see your latest balances and transactions in real time - all in one place. Track your money as it moves, categorize spending automatically, and stay in sync across all your devices.
                         </p>
                     </div>
                     <div class="even-column transactions-list">
@@ -157,9 +156,9 @@ const scrollRight = () => {
                         <img :src="budget" alt="Budgets screenshot">
                     </div>
                     <div class="even-column">
-                        <h2>Monthly and Annual Budgets</h2>
+                        <h2>Monthly or Annual? Do Both.</h2>
                         <p class="light-grey-text">
-                            You should be able to budget however you want. So whether you used zero-based budgeting or flexible budgeting, we have got you covered.
+                            Break your budget down month-by-month, or zoom out to plan for the year ahead. Whether you're tracking everyday spending or saving for something big, we make it easy.
                         </p>
                     </div>
                     <div class="even-column">
@@ -168,7 +167,7 @@ const scrollRight = () => {
                 </div>
             </div>
         </div>
-        <div class="dark-section p-2">
+        <div id="pricing" class="dark-section p-2">
             <div class="overview-card dark-overview-card mt-4">
                 <h2>Pricing</h2>
                 <h4>Try Premium Free for 7 Days</h4>
@@ -194,7 +193,7 @@ const scrollRight = () => {
                 </div>
             </div>
         </div>
-        <div class="dark-section p-2">
+        <div id="security" class="dark-section p-2">
             <div class="overview-card dark-overview-card mt-4">
                 <div class="global-section">
                     <h2>Built with Security<br>from the Ground Up.</h2>
@@ -213,7 +212,7 @@ const scrollRight = () => {
                         </div>
                         <div class="pair">
                             <div class="info-block size-3">
-                                <p>Your data is yours. You control your rules, your bank syncing, and categories. Want us to hard delete all of your data? No problem, just email support and it's done.</p>
+                                <p>Your data belongs to you. From custom rules to bank connections, you’re in full control. <br/> Need your data permanently deleted? Just email support, we’ll take care of it, no questions asked.</p>
                             </div>
                             <div class="stat-block">🛡️<br></div>
                         </div>
@@ -232,8 +231,16 @@ const scrollRight = () => {
                         users think about our app.
                         </p>
                         <div class="arrow-buttons">
-                        <button class="arrow-button" @click="scrollLeft">←</button>
-                        <button class="arrow-button" @click="scrollRight">→</button>
+                            <button class="arrow-button" @click="scrollLeft">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                                    <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+                                </svg>
+                            </button>
+                            <button class="arrow-button" @click="scrollRight">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                            </svg>
+                            </button>
                         </div>
                     </div>
 
@@ -294,7 +301,7 @@ const scrollRight = () => {
                 </section>
             </div>
         </div>
-        <div class="dark-section p-2">
+        <div id="support" class="dark-section p-2 pb-4">
             <div class="overview-card dark-overview-card mt-4">
                 <h2>Need Help or Have Questions?</h2>
                 <div class="d-flex support-block mt-4">
@@ -304,6 +311,9 @@ const scrollRight = () => {
                 </div>
             </div>
         </div>
+        <!-- <div class="footer p-2">
+            <h2>Footer</h2>
+        </div> -->
     </div>
 </template>
 
@@ -440,7 +450,7 @@ const scrollRight = () => {
 .feature-card h2 {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #555;
+  color: #d4d2d2;
   margin-bottom: 0.5rem;
 }
 
@@ -462,13 +472,13 @@ const scrollRight = () => {
 }
 
 .purple {
-  background-color: #e7ddf9;
+  background-color: #223247;
 }
 .green {
-  background-color: #d6f4da;
+  background-color: #824c67;
 }
 .yellow {
-  background-color: #fff1cc;
+  background-color: #1e6356;
 }
 
 .even-column {
@@ -695,7 +705,7 @@ const scrollRight = () => {
 }
 
 .arrow-button {
-  background: #ff6c6c;
+  background: #646cff;
   border: none;
   color: white;
   font-size: 1.25rem;
@@ -726,8 +736,7 @@ const scrollRight = () => {
   padding: 2rem;
   border-radius: 1.5rem;
   scroll-snap-align: start;
-  background: #ccc;
-  color: #1a1a1a;
+  color: #d4d2d2;
 }
 
 .testimonial-text {
@@ -759,14 +768,6 @@ const scrollRight = () => {
   color: #555;
 }
 
-.purple {
-  background-color: #c3b5f5;
-}
-
-.green {
-  background-color: #aef5c3;
-}
-
 @media (max-width: 768px) {
   .testimonials-wrapper {
     flex-direction: column;
@@ -781,5 +782,11 @@ const scrollRight = () => {
     gap: 2em;
     justify-content: center;
     align-items: center;
+}
+
+.footer {
+    padding: 2rem;
+    color: #d4d2d2;
+    background: #212e3e;
 }
 </style>

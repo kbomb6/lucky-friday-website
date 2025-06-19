@@ -83,6 +83,7 @@ h1 {
 .transparent-button {
   background-color: transparent;
   color: white;
+  border: none;
 }
 
 .blue-button {

@@ -1,22 +1,28 @@
 <template>
   <header class="site-header">
     <nav class="nav-left">
-      <RouterLink to="/pitchdeck" class="transparent-button">Features</RouterLink>
-      <RouterLink to="/onepage" class="transparent-button">Pricing</RouterLink>
-      <RouterLink to="/onepage" class="transparent-button">Security</RouterLink>
-      <RouterLink to="/demo" class="transparent-button">Support</RouterLink>
+      <button class="transparent-button button"  @click="scrollTo('features')">Features</button>
+      <button class="transparent-button button"  @click="scrollTo('pricing')">Pricing</button>
+      <button class="transparent-button button"  @click="scrollTo('security')">Security</button>
+      <button class="transparent-button button"  @click="scrollTo('support')">Support</button>
     </nav>
-    
-    
-<RouterLink to="/login" custom v-slot="{ navigate, href }">
-  <button @click="navigate" :href="href" class="button login-button">Log In</button>
-</RouterLink>
-    <!-- <RouterLink to="/login" class="login-button">Log In</RouterLink> -->
+    <button class="button teal-button" @click="goToLogin">Log In</button>
   </header>
 </template>
 
 <script setup>
 import { RouterLink } from 'vue-router'
+
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function goToLogin() {
+    window.location.href = 'https://www.luckyfridayapp.com'
+}
 </script>
 
 <style scoped>
