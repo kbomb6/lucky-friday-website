@@ -69,21 +69,18 @@ const contactSupport = () => {
                     <h2>Step 1 of 3</h2>
                     <h3>Link accounts</h3>
                     <p>Securely connect your banks and credit cards to see everything in one place.</p>
-                    <!-- <img src="/screens/link-accounts.png" alt="Link accounts screenshot" /> -->
                 </div>
 
                 <div class="feature-card green">
                     <h2>Step 2 of 3</h2>
                     <h3>Track spending</h3>
                     <p>Use custom categories and smart rules to stay on top of every dollar.</p>
-                    <!-- <img src="/screens/track-spending.png" alt="Track spending screenshot" /> -->
                 </div>
 
                 <div class="feature-card yellow">
                     <h2>Step 3 of 3</h2>
                     <h3>Feel in control</h3>
                     <p>See your net worth, set monthly goals, and gain peace of mind over time.</p>
-                    <!-- <img src="/screens/net-worth.png" alt="Net worth screenshot" /> -->
                 </div>
                 </div>
             </div>
@@ -116,7 +113,9 @@ const contactSupport = () => {
             <div class="overview-card dark-overview-card features-section mt-4">
                 <div class="d-flex flex-row column-wrapper">
                     <div class="even-column">
-                        image here
+                        <video autoplay muted loop playsinline>
+                            <source src="../assets/screenrecordings/customization.mov" type="video/mp4" />
+                        </video>
                     </div>
                     <div class="even-column">
                         <h2>Fully Customizable</h2>
@@ -137,7 +136,9 @@ const contactSupport = () => {
                         </p>
                     </div>
                      <div>
-                        <img :src="rulesImg" alt="Rules Screenshot" />
+                        <video autoplay muted loop playsinline>
+                            <source src="../assets/screenrecordings/rules.mov" type="video/mp4" />
+                        </video>
                     </div>
                 </div>
             </div>
@@ -152,7 +153,9 @@ const contactSupport = () => {
                         </p>
                     </div>
                     <div class="even-column transactions-list">
-                        <img :src="transactionsList" alt="Transactions Screenshot" />
+                        <video autoplay muted loop playsinline>
+                            <source src="../assets/screenrecordings/transactions.mov" type="video/mp4" />
+                        </video>
                     </div>
                 </div>
             </div>
@@ -161,7 +164,9 @@ const contactSupport = () => {
             <div class="overview-card dark-overview-card features-section mt-4">
                 <div class="d-flex flex-row column-wrapper">
                     <div class="even-column budget-image">
-                        <img :src="budget" alt="Budgets screenshot">
+                        <video autoplay muted loop playsinline>
+                            <source src="../assets/screenrecordings/monthlybudget.mov" type="video/mp4" />
+                        </video>
                     </div>
                     <div class="even-column">
                         <h2>Monthly or Annual? Do Both.</h2>
@@ -170,7 +175,9 @@ const contactSupport = () => {
                         </p>
                     </div>
                     <div class="even-column">
-                        annual budget image here
+                        <video autoplay muted loop playsinline>
+                            <source src="../assets/screenrecordings/annualbudget.mov" type="video/mp4" />
+                        </video>
                     </div>
                 </div>
             </div>
@@ -235,8 +242,8 @@ const contactSupport = () => {
                     <div class="testimonials-header">
                         <h2>Hear from our Users</h2>
                         <p class="light-text">
-                        Find our what existing Lucky Friday<br>
-                        users think about our app.
+                        Find our what Lucky Friday<br>
+                        users will say about our app.
                         </p>
                         <div class="arrow-buttons">
                             <button class="arrow-button" @click="scrollLeft">
@@ -255,52 +262,44 @@ const contactSupport = () => {
                     <div ref="testimonialContainer" class="testimonials-scroll">
                         <div class="testimonial-card purple">
                         <p class="testimonial-text">
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique..."
+                            "This app totally changed how I think about money!"
                         </p>
                         <div class="user">
-                            <img src="https://i.pravatar.cc/80?img=13" alt="Emma Darcy" />
                             <div>
-                            <h4>Emma Darcy</h4>
-                            <p class="light-text">Travel Ready graduate</p>
+                                <h4>Emma D.</h4>
                             </div>
                         </div>
                         </div>
 
                         <div class="testimonial-card green">
                         <p class="testimonial-text">
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique..."
+                            “So intuitive — I finally feel in control.”
                         </p>
                         <div class="user">
-                            <img src="https://i.pravatar.cc/80?img=11" alt="Sofia Patel" />
                             <div>
-                            <h4>Sofia Patel</h4>
-                            <p class="light-text">Casual Learner graduate</p>
+                                <h4>Sofia Patel</h4>
                             </div>
                         </div>
                         </div>
 
                         <div class="testimonial-card purple">
                         <p class="testimonial-text">
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique..."
+                            “I’ve tried every budgeting app out there — this is the only one that finally clicked for me.”
                         </p>
                         <div class="user">
-                            <img src="https://i.pravatar.cc/80?img=13" alt="Emma Darcy" />
                             <div>
-                            <h4>Emma Darcy</h4>
-                            <p class="light-text">Travel Ready graduate</p>
+                                <h4>Emma Darcy</h4>
                             </div>
                         </div>
                         </div>
 
                         <div class="testimonial-card green">
                         <p class="testimonial-text">
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique..."
+                            “It’s like this app knew what I needed before I did. Simple, beautiful, and empowering.”
                         </p>
                         <div class="user">
-                            <img src="https://i.pravatar.cc/80?img=14" alt="Liam Nguyen" />
                             <div>
-                            <h4>Liam Nguyen</h4>
-                            <p class="light-text">Budget Pro graduate</p>
+                                <h4>Liam Nguyen</h4>
                             </div>
                         </div>
                         </div>
@@ -754,8 +753,6 @@ const contactSupport = () => {
 }
 
 .user {
-  display: flex;
-  align-items: center;
   gap: 1rem;
 }
 
@@ -796,5 +793,9 @@ const contactSupport = () => {
     padding: 2rem;
     color: #d4d2d2;
     background: #212e3e;
+}
+
+video {
+    max-height: 500px;
 }
 </style>
