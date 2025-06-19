@@ -313,7 +313,7 @@ const contactSupport = () => {
             <div class="overview-card dark-overview-card mt-4">
                 <h2>Need Help or Have Questions?</h2>
                 <div class="d-flex support-block mt-4">
-                    <button class="button teal-button">Browse FAQs</button>
+                    <!-- <button class="button teal-button">Browse FAQs</button> -->
                     <button class="button teal-outline-button" @click="goToDocumentation">Read our documentation</button>
                     <button class="button teal-button" @click="contactSupport">Contact Support</button>
                 </div>
