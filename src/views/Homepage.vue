@@ -667,7 +667,8 @@ const contactSupport = () => {
   .cell {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
     border-bottom: 1px solid #333;
   }
 
