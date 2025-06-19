@@ -671,6 +671,11 @@ const contactSupport = () => {
     border-bottom: 1px solid #333;
   }
 
+  .comparison-table {
+    margin: 0; 
+    padding: 0;
+  }
+  
   .cell.feature {
     font-weight: 700;
     font-size: 1.1rem;
