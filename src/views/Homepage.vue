@@ -667,7 +667,8 @@ const contactSupport = () => {
   .cell {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
     border-bottom: 1px solid #333;
   }
 
@@ -675,7 +676,7 @@ const contactSupport = () => {
     margin: 0; 
     padding: 0;
   }
-  
+
   .cell.feature {
     font-weight: 700;
     font-size: 1.1rem;
@@ -818,9 +819,33 @@ const contactSupport = () => {
   .testimonials-wrapper {
     flex-direction: column;
   }
-  .testimonials-scroll {
+
+    .testimonials-wrapper {
     flex-direction: column;
-    overflow-x: hidden;
+  }
+
+  .testimonials-scroll {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-width: 250px;
+  }
+
+  .testimonials-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonial-card {
+    scroll-snap-align: start;
+    flex: 0 0 80%;
+    margin-right: 1rem;
+  }
+
+  .arrow-buttons {
+    display: none;
   }
 
     .flex-row {
@@ -840,6 +865,10 @@ const contactSupport = () => {
   .top-section img {
     width: 90%;
     bottom: 20px;
+  }
+
+  .support-block {
+    flex-direction: column;
   }
 }
 
