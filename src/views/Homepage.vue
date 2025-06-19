@@ -781,6 +781,20 @@ const contactSupport = () => {
     flex-direction: column;
     overflow-x: hidden;
   }
+
+    .flex-row {
+    flex-direction: column !important;
+  }
+
+  .column-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .even-column {
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 .support-block {
