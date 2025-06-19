@@ -646,33 +646,69 @@ const contactSupport = () => {
 }
 
 @media (max-width: 768px) {
-  .table-wrapper {
-    display: block;
+    .table-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .table-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 1rem;
+    display: block;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #212e3e;
   }
 
   .header {
     display: none;
   }
 
-  .feature {
-    grid-column: span 2;
-    font-size: 1.1rem;
-    background: #f0f0f0;
-  }
-
   .cell {
-    border-bottom: none;
-    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
   }
 
-  .pro {
-    background-color: #d7f7e3;
+  .cell.feature {
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-bottom: none;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem 0;
+    color: #48ffcd;
+  }
+
+  .cell.free,
+  .cell.pro {
+    justify-content: space-between;
+    color: white;
+  }
+
+  .cell.free::before {
+  content: 'Free: ';
+  font-weight: bold;
+  color: #48ffcd;
+  margin-right: 0.5rem;
+}
+
+.cell.pro::before {
+  content: 'Premium: ';
+  font-weight: bold;
+  color: #ffdba3;
+  margin-right: 0.5rem;
+}
+
+  .price {
+    margin-left: auto;
+    font-weight: bold;
+    color: #48ffcd;
+  }
+
+  .table-row:last-child .cell {
+    border-bottom: none;
   }
 }
 
@@ -794,6 +830,11 @@ const contactSupport = () => {
   .even-column {
     max-width: 100%;
     text-align: center;
+  }
+
+  .top-section img {
+    width: 90%;
+    bottom: 20px;
   }
 }
 
