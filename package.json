@@ -11,7 +11,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "bootstrap": "^5.3.7",
     "pinia": "^3.0.1",
+    "sass": "^1.89.2",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
