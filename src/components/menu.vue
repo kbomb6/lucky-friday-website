@@ -4,27 +4,30 @@
         ☰
     </button>
     <nav class="mobile-nav" v-if="showMenu">
-      <button class="transparent-button button" @click="scrollTo('features')">Features</button>
-      <button class="transparent-button button" @click="scrollTo('pricing')">Pricing</button>
-      <button class="transparent-button button" @click="scrollTo('security')">Security</button>
-      <button class="transparent-button button" @click="scrollTo('support')">Support</button>
+        <router-link to="/" class="menu-link" @click="showMenu = false">Home</router-link>
+        <router-link to="/features" class="menu-link" @click="showMenu = false">Features</router-link>
+        <router-link to="/pricing" class="menu-link" @click="showMenu = false">Pricing</router-link>
+        <router-link to="/security" class="menu-link" @click="showMenu = false">Security</router-link>
+        <router-link to="/support" class="menu-link" @click="showMenu = false">Support</router-link>
       <button class="button teal-button mt-2" @click="goToLogin">Log In</button>
     </nav>
     <nav class="nav-left">
-      <button class="transparent-button button"  @click="scrollTo('features')">Features</button>
-      <button class="transparent-button button"  @click="scrollTo('pricing')">Pricing</button>
-      <button class="transparent-button button"  @click="scrollTo('security')">Security</button>
-      <button class="transparent-button button"  @click="scrollTo('support')">Support</button>
+      <router-link to="/" class="menu-link">Home</router-link>
+      <router-link to="/features" class="menu-link">Features</router-link>
+      <router-link to="/pricing" class="menu-link">Pricing</router-link>
+      <router-link to="/security" class="menu-link">Security</router-link>
+      <router-link to="/support" class="menu-link">Support</router-link>
     </nav>
     <button class="button teal-button login-button" @click="goToLogin">Log In</button>
   </header>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import { ref } from 'vue'
 
 const showMenu = ref(false)
+const router = useRouter()
 
 function scrollTo(id) {
   const el = document.getElementById(id);
@@ -48,7 +51,8 @@ function goToLogin() {
   top: 0;
   width: 100%;
   z-index: 10;
-  font-family: 'Josefin Sans'
+  font-family: 'Josefin Sans';
+  height: 100px;
 }
 
 .nav-left {
@@ -97,6 +101,31 @@ function goToLogin() {
   border: none;
   color: white;
   cursor: pointer;
+}
+
+.menu-button {
+    border: 1px solid transaparent;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    line-height: 1;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans';
 }
 
 @media (max-width: 768px) {

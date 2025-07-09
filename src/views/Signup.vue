@@ -124,6 +124,7 @@ const joinWaitlist = async () => {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-top: 100px;
 }
 
 .top-content {

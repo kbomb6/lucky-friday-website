@@ -4,6 +4,10 @@ import OnePage from '../views/OnePage.vue';
 import Demo from '../views/Demo.vue';
 import Signup from '../views/Signup.vue'
 import Homepage from '../views/Homepage.vue'
+import Support from '../views/Support.vue'
+import Features from '../views/Features.vue'
+import Pricing from '../views/Pricing.vue'
+import Security from '../views/Security.vue'
 
 const routes = [
   {
@@ -30,6 +34,26 @@ const routes = [
     path: '/',
     name: 'homepage',
     component: Homepage,
+  },
+  {
+    path: '/support',
+    name: 'support',
+    component: Support,
+  },
+  {
+    path: '/features',
+    name: 'features',
+    component: Features,
+  },
+  {
+    path: '/security',
+    name: 'security',
+    component: Security
+  },
+  {
+    path: '/pricing',
+    name: 'pricing',
+    component: Pricing
   }
 ];
 
