@@ -8,6 +8,7 @@ import Support from '../views/Support.vue'
 import Features from '../views/Features.vue'
 import Pricing from '../views/Pricing.vue'
 import Security from '../views/Security.vue'
+import Privacy from '../views/Privacy.vue'
 
 const routes = [
   {
@@ -54,6 +55,11 @@ const routes = [
     path: '/pricing',
     name: 'pricing',
     component: Pricing
+  },
+  {
+    path: '/privacy',
+    name: 'privacy',
+    component: Privacy
   }
 ];
 
